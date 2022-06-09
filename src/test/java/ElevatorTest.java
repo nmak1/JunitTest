@@ -9,34 +9,8 @@ import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.core.IsCollectionContaining.hasItems;
 
-public class ElevatorTest extends Main {
+public class ElevatorTest extends Elevator {
 
-//    private final InputStream systemIn = in;
-//    private final PrintStream systemOut = out;
-//
-//    private ByteArrayInputStream testIn;
-//    private ByteArrayOutputStream testOut;
-//
-//    @Before
-//    public void setUpOutput() {
-//        testOut = new ByteArrayOutputStream();
-//        System.setOut(new PrintStream(testOut));
-//    }
-//
-//    private void provideInput(String data) {
-//        testIn = new ByteArrayInputStream(data.getBytes());
-//        setIn(testIn);
-//    }
-//
-//    private String getOutput() {
-//        return testOut.toString();
-//    }
-//
-//    @After
-//    public void restoreSystemInputOutput() {
-//        setIn(systemIn);
-//        setOut(systemOut);
-//    }
 
 
     @Test
@@ -48,24 +22,14 @@ public class ElevatorTest extends Main {
         floorTest.add(12);
         floorTest.add(10);
         floorTest.add(0);
-        Main.printElevator(floorTest);
+        Elevator.printElevator(floorTest);
 
 
         assertThat(floorTest, is(floorTest));
         MatcherAssert.<Queue<Integer>>assertThat(floorTest, hasItems(8));
-        assertThat(floorTest, containsInAnyOrder(2, 8, 12));
+        assertThat(floorTest, containsInAnyOrder(2, 8, 12,10,0));
 
     }
-//    @Test
-//    public void testCase1() {
-//        final String testString = "0";
-//        provideInput(testString);
-//
-//        Main.main(new String[0]);
-//
-//        assertEquals(testString, getOutput());
-//    }
-
 
 
 }

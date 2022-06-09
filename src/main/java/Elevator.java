@@ -6,19 +6,19 @@ import java.util.stream.Collectors;
 
 import static java.lang.System.*;
 
-public class Main {
+public class Elevator {
 
-    public static Main printElevator(Queue<Integer> floor) {
+    public static void  printElevator(Queue<Integer> floor) {
         out.println("Лифт проследовал по следующим этажам:" +
                 lineSeparator() +
                 floor.stream().map(i -> i.toString()).collect(Collectors.joining("->")));
 
 
-        return null;
+
     }
 
 
-    public static  Main addFloor(Scanner scanner ) {
+    public static  Elevator addFloor(Scanner scanner ) {
         Queue<Integer> floor = new ArrayDeque<>();
 
         int d;
@@ -52,7 +52,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Main.addFloor(new Scanner(System.in) );
+        Elevator.addFloor(new Scanner(System.in) );
     }
 }
 
