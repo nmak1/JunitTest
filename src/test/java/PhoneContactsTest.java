@@ -1,4 +1,6 @@
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import ru.nmak1.main.Contact;
 import ru.nmak1.main.PhoneContacts;
 
@@ -19,6 +21,17 @@ public class PhoneContactsTest  {
         Contact contact1 = new Contact("Сергей", "888");
         assertNotEquals(contact,contact1);
     }
+   @ParameterizedTest
+   @ValueSource(strings = { "дом", "работа","семья" })
+    void TestPoneContacts(String goup){
+       PhoneContacts phoneContacts = new PhoneContacts();
+       Contact contact =
+               new Contact("Сергей","888");
+       phoneContacts.addGroup(goup);
+       phoneContacts.addContact(goup,contact);
+       phoneContacts.printGroupContact(goup);
+   }
+
 
 
 }
