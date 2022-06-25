@@ -15,14 +15,15 @@ public class ElevatorTest extends Elevator {
 
     @Test
 
-    public void ArrayDeque() {
+    public void arayDeque() {
         final Queue<Integer> floorTest = new ArrayDeque<>();
         floorTest.add(2);
         floorTest.add(8);
         floorTest.add(12);
         floorTest.add(10);
         floorTest.add(0);
-        Elevator.printElevator(floorTest);
+
+        Elevator.printElevator((Queue<Integer>) floorTest);
 
 
         assertThat(floorTest, is(floorTest));
